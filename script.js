@@ -3,13 +3,18 @@ alert("Bienvenido al sistema de reservas del Hotel Hadrianus!")
 let huespedes = Number(prompt("Ingrese la cantidad de huespedes (en números):"));
 let nombresHuespedes = "";
 
-if (huespedes != "") /*acá me falta una condición para que en el prompt sólo se puedan ingresar números*/ {
+function solicitarNombres() {
     for (i = 1; i < huespedes; i++) {
         nombresHuespedes += prompt("Ingrese nombre y apellido de un pasajero") + ", "; 
         if (i == huespedes-1) {
             nombresHuespedes += prompt("Ingrese nombre y apellido de un pasajero"); 
         }
     }
+}
+
+if (huespedes != "") /*acá me falta una condición para que en el prompt sólo se puedan ingresar números*/ {
+    solicitarNombres();
+    
     let habitaciones = prompt("Cuántas habitaciones (en números) desea reservar?");
         while (habitaciones == "") /*acá me falta una condición para que en el prompt sólo se puedan ingresar números*/ {
             habitaciones = prompt("Por favor ingrese un número válido:")
