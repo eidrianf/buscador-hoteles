@@ -114,7 +114,7 @@ do {
 let tarifasFiltradas = 0;
 
 for (const tarifa of filtroCiudad){
-    if (tarifa.tarifaNoche < presupuesto){
+    if (tarifa.tarifaNoche <= presupuesto){
         tarifasFiltradas += 1;
     };
 };
