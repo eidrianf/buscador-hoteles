@@ -345,21 +345,23 @@ function inicioSesiónUsuario (e) {
 
     const existeEmail = usuariosRegistrados.filter(usuario => usuario.email === email);
     
-   
-    for (const usuario of existeEmail){
-        let emailUsuario = usuario.email;
-        let passwordUsuario = usuario.password;
+    if (existeEmail.length == 0) {
+        let mensaje = document.getElementById("mensajeInicioSesion");
+        mensaje.innerHTML = `Usuario inexistente. Por favor regístrese primero.`
+    }else {
+        for (const usuario of existeEmail){
+            let emailUsuario = usuario.email;
+            let passwordUsuario = usuario.password;
 
-        if ((emailUsuario == email) && (passwordUsuario == password)){
-            let mensaje = document.getElementById("mensajeInicioSesion");
-            mensaje.innerHTML = `Bienvenido ${email}! Usted ha iniciado sesión correctamente.`
-        } else {
-            let mensaje = document.getElementById("mensajeInicioSesion");
-            mensaje.innerHTML = `Email o contraseña incorrectos.`
-        }
-    }
-    
-    
+            if ((emailUsuario == email) && (passwordUsuario == password)){
+                let mensaje = document.getElementById("mensajeInicioSesion");
+                mensaje.innerHTML = `Bienvenido ${email}! Usted ha iniciado sesión correctamente.`
+            } else {
+                let mensaje = document.getElementById("mensajeInicioSesion");
+                mensaje.innerHTML = `Email o contraseña incorrectos.`
+            }
+        } 
+    }   
 };
 
 inicioSesión.addEventListener('submit', inicioSesiónUsuario);
