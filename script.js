@@ -296,6 +296,17 @@ if (tarifasFiltradas > 0) {
 
 ///////////////////////////////////// TERCERA PRE ENTREGA ///////////////////////////////////////////
 
+class Usuario{
+    constructor(email, password){
+        this.email = email;
+        this.password = password;
+    }
+};
+
+const usuarios = [];
+console.log(usuarios)
+
+// REGISTRO
 let registro = document.getElementById("formularioRegistro");
 
 function registroUsuario (e) {
@@ -303,13 +314,24 @@ function registroUsuario (e) {
     e.target.value;
     let email = document.getElementById("emailRegistro").value;
     let password = document.getElementById("passwordRegistro").value;
-    localStorage.setItem("email", email);
-    localStorage.setItem("password", password);
+
+    usuarios.push(new Usuario(email, password));
+
+    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuarios));
+
     formularioRegistro.reset();
-}
+
+    if ((usuarios != [])){
+        let mensaje = document.getElementById("mensajeRegistro");
+        mensaje.innerHTML = `Registro completado con exito.`
+    }
+};
 
 registro.addEventListener('submit',registroUsuario);
 
+
+// INICIO DE SESION
+const usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados"));
 
 let inicioSesión = document.getElementById("formularioInicio");
 
@@ -318,17 +340,26 @@ function inicioSesiónUsuario (e) {
     e.target.value;
     let email = document.getElementById("emailInicio").value;
     let password = document.getElementById("passwordInicio").value;
-    let emailLS = localStorage.getItem("email");
-    let passwordLS = localStorage.getItem("password");
+
     formularioInicio.reset();
+
+    const existeEmail = usuariosRegistrados.filter(usuario => usuario.email === email);
     
-    if ((email === emailLS) && (password === passwordLS)){
-        let mensaje = document.getElementById("mensajeInicioSesion");
-        mensaje.innerHTML = `Bienvenido ${email}! Usted ha iniciado sesión correctamente.`
-    } else {
-        let mensaje = document.getElementById("mensajeInicioSesion");
-        mensaje.innerHTML = `Email o contraseña incorrectos.`
+   
+    for (const usuario of existeEmail){
+        let emailUsuario = usuario.email;
+        let passwordUsuario = usuario.password;
+
+        if ((emailUsuario == email) && (passwordUsuario == password)){
+            let mensaje = document.getElementById("mensajeInicioSesion");
+            mensaje.innerHTML = `Bienvenido ${email}! Usted ha iniciado sesión correctamente.`
+        } else {
+            let mensaje = document.getElementById("mensajeInicioSesion");
+            mensaje.innerHTML = `Email o contraseña incorrectos.`
+        }
     }
+    
+    
 };
 
 inicioSesión.addEventListener('submit', inicioSesiónUsuario);
