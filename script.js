@@ -294,7 +294,26 @@ if (tarifasFiltradas > 0) {
 */
 
 
-///////////////////////////////////// TERCERA PRE ENTREGA ///////////////////////////////////////////
+///////////////////////////////////// PROYECO FINAL ///////////////////////////////////////////
+
+document.getElementById("registro").style.display = 'none';
+document.getElementById("ingresar").style.display = 'none';
+
+// NAVEGACION
+let botonRegistro = document.getElementById("botonRegistro");
+botonRegistro.addEventListener('click', show => {
+    document.getElementById("registro").style.display = 'block';
+    document.getElementById("index").style.display = 'none';
+    document.getElementById("ingresar").style.display = 'none';
+});
+
+let botonIngresar = document.getElementById("botonIngresar");
+botonIngresar.addEventListener('click', show => {
+    document.getElementById("ingresar").style.display = 'block';
+    document.getElementById("index").style.display = 'none';
+    document.getElementById("registro").style.display = 'none';
+});
+
 
 class Usuario{
     constructor(email, password){
@@ -303,8 +322,8 @@ class Usuario{
     }
 };
 
-const usuarios = [];
-console.log(usuarios)
+let usuarios = [];
+
 
 // REGISTRO
 let registro = document.getElementById("formularioRegistro");
@@ -315,33 +334,48 @@ function registroUsuario (e) {
     let email = document.getElementById("emailRegistro").value;
     let password = document.getElementById("passwordRegistro").value;
 
-    usuarios.push(new Usuario(email, password));
+    usuarios = JSON.parse(localStorage.getItem("usuariosRegistrados"));
 
-    localStorage.setItem("usuariosRegistrados", JSON.stringify(usuarios));
+    if (usuarios == null){
+        usuarios = [];
+    };
+
+    const emailExistente = usuarios.some((usuario) => usuario.email === email);
+
+    if (emailExistente != true){
+        usuarios.push(new Usuario(email, password));
+        localStorage.setItem("usuariosRegistrados", JSON.stringify(usuarios));
+        let mensaje = document.getElementById("mensajeRegistro");
+        mensaje.innerHTML = `Registro completado con exito.`;
+        setTimeout( () => { 
+            document.getElementById("registro").style.display = 'none';
+            document.getElementById("ingresar").style.display = 'block';
+         }, 3000 );
+    } else{
+        let mensaje = document.getElementById("mensajeRegistro");
+        mensaje.innerHTML = `Ya existe un usuario con el e‑mail ${email}`;
+    }
 
     formularioRegistro.reset();
 
-    if ((usuarios != [])){
-        let mensaje = document.getElementById("mensajeRegistro");
-        mensaje.innerHTML = `Registro completado con exito.`
-    }
 };
 
 registro.addEventListener('submit',registroUsuario);
 
 
 // INICIO DE SESION
-const usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados"));
 
-let inicioSesión = document.getElementById("formularioInicio");
+let inicioSesion = document.getElementById("formularioInicio");
 
-function inicioSesiónUsuario (e) {
+function inicioSesionUsuario (e) {
     e.preventDefault();
     e.target.value;
     let email = document.getElementById("emailInicio").value;
     let password = document.getElementById("passwordInicio").value;
 
     formularioInicio.reset();
+
+    const usuariosRegistrados = JSON.parse(localStorage.getItem("usuariosRegistrados"));
 
     const existeEmail = usuariosRegistrados.filter(usuario => usuario.email === email);
     
@@ -356,12 +390,25 @@ function inicioSesiónUsuario (e) {
             if ((emailUsuario == email) && (passwordUsuario == password)){
                 let mensaje = document.getElementById("mensajeInicioSesion");
                 mensaje.innerHTML = `Bienvenido ${email}! Usted ha iniciado sesión correctamente.`
+                setTimeout( () => { 
+                    document.getElementById("ingresar").style.display = 'none';
+                    document.getElementById("index").style.display = 'block';
+                    let headerIndex__menu = document.getElementById("headerIndex__menu");
+                    headerIndex__menu.innerHTML = `<li>Bienvenido ${email}!</li>`
+                 }, 3000 );
             } else {
                 let mensaje = document.getElementById("mensajeInicioSesion");
-                mensaje.innerHTML = `Email o contraseña incorrectos.`
+                mensaje.innerHTML = `Contraseña incorrecta.`
             }
         } 
     }   
 };
 
-inicioSesión.addEventListener('submit', inicioSesiónUsuario);
+inicioSesion.addEventListener('submit', inicioSesionUsuario);
+
+
+
+
+
+
+

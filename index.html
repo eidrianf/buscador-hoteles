@@ -4,14 +4,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Hoteles - PreEntrega2 - Francioni</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Buscador de Hoteles - Francioni</title>
 </head>
 <body>
+
+    <header class="header__index">
+        
+        <div class="nav__index">
+
+            <div class="header__logo">
+
+            </div>
+
+            <div class="header__usuario">
+                <ul class="header__menu" id="headerIndex__menu">
+                    <li class="menu__li" id="botonRegistro">Registro</li>
+                    <li class="menu__li" id="botonIngresar">Ingresar</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <h1>Hadrianus</h1>
+
+        <h2>Bienvenido a Hadrianus! El sistema más completo de reservas de hoteles en Argentina!</h2>
+
+    </header>
+
+    <main>
+
+        <section id="index">
+
+            <form action="">
+                <input type="text" placeholder="¿Adónde vas?">
+                <input type="number" placeholder="Cantidad de huéspedes">
+                <input type="number" placeholder="Cantidad de habitaciones">
+                <input type="number" placeholder="Presupuesto por noche">
+                <input type="submit" value="Buscar">
+            </form>
+
+        </section>
+
+        <section id="registro">
+
+            <form action="" id="formularioRegistro">
+                <h5>Registrarse</h5>
+                <label for="emailRegistro">Ingrese su correo electrónico:</label>
+                <input id="emailRegistro" type="email" required> 
+                <br>
+                <label for="passwordRegistro">Ingrese su contraseña:</label>
+                <input id="passwordRegistro" type="text" required>
+                <br>
+                <input type="submit" name="" id="">
+            </form>
+        
+            <p id="mensajeRegistro"></p>
+            
+        </section>
+
+        <section id="ingresar">
+
+            <form action="" id="formularioInicio">
+                <h5>Inicio de sesión</h5>
+                <label for="emailInicio">Ingrese su correo electrónico:</label>
+                <input id="emailInicio" type="email" required> 
+                <br>
+                <label for="passwordInicio">Ingrese su contraseña:</label>
+                <input id="passwordInicio" type="text" required>
+                <br>
+                <input type="submit" name="" id="">
+            </form>
+        
+            <p id="mensajeInicioSesion"></p>
+
+        </section>
+
+    </main>
+
+    <footer class="footer__index">
+
+    </footer>
     
-    <h1>Hadrianus</h1>
-
-    <h2>Bienvenido a Hadrianus! El sistema más completo de reservas de hoteles en Argentina!</h2>
-
     <!-- <h4>Elija la ciudad donde quiere reservar el alojamiento:</h4>
     <select name="" id="ciudadElegida">
         <option value="Buenos Aires">Buenos Aires</option>
@@ -21,34 +95,7 @@
         <option value="Salta">Salta</option>
         <option value="Ushuaia">Ushuaia</option>
     </select> -->
-
-    <form action="" id="formularioRegistro">
-        <h5>Registrarse</h5>
-        <label for="emailRegistro">Ingrese su correo electrónico:</label>
-        <input id="emailRegistro" type="email" required> 
-        <br>
-        <label for="passwordRegistro">Ingrese su contraseña:</label>
-        <input id="passwordRegistro" type="text" required>
-        <br>
-        <input type="submit" name="" id="">
-    </form>
-
-    <p id="mensajeRegistro"></p>
-
-    <form action="" id="formularioInicio">
-        <h5>Inicio de sesión</h5>
-        <label for="emailInicio">Ingrese su correo electrónico:</label>
-        <input id="emailInicio" type="email" required> 
-        <br>
-        <label for="passwordInicio">Ingrese su contraseña:</label>
-        <input id="passwordInicio" type="text" required>
-        <br>
-        <input type="submit" name="" id="">
-    </form>
-
-    <p id="mensajeInicioSesion"></p>
  
-
-    <script src="script.js"></script>
+    <script defer src="./script.js"></script>
 </body>
 </html>
