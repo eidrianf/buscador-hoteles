@@ -4,98 +4,151 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./style.css">
     <title>Buscador de Hoteles - Francioni</title>
 </head>
 <body>
 
-    <header class="header__index">
+    <div class="container">
+
+        <header class="header__index">
         
-        <div class="nav__index">
-
-            <div class="header__logo">
-
-            </div>
-
-            <div class="header__usuario">
-                <ul class="header__menu" id="headerIndex__menu">
-                    <li class="menu__li" id="botonRegistro">Registro</li>
-                    <li class="menu__li" id="botonIngresar">Ingresar</li>
-                </ul>
-            </div>
-
-        </div>
-        
-        <h1>Hadrianus</h1>
-
-        <h2>Bienvenido a Hadrianus! El sistema más completo de reservas de hoteles en Argentina!</h2>
-
-    </header>
-
-    <main>
-
-        <section id="index">
-
-            <form action="">
-                <input type="text" placeholder="¿Adónde vas?">
-                <input type="number" placeholder="Cantidad de huéspedes">
-                <input type="number" placeholder="Cantidad de habitaciones">
-                <input type="number" placeholder="Presupuesto por noche">
-                <input type="submit" value="Buscar">
-            </form>
-
-        </section>
-
-        <section id="registro">
-
-            <form action="" id="formularioRegistro">
-                <h5>Registrarse</h5>
-                <label for="emailRegistro">Ingrese su correo electrónico:</label>
-                <input id="emailRegistro" type="email" required> 
-                <br>
-                <label for="passwordRegistro">Ingrese su contraseña:</label>
-                <input id="passwordRegistro" type="text" required>
-                <br>
-                <input type="submit" name="" id="">
-            </form>
-        
-            <p id="mensajeRegistro"></p>
-            
-        </section>
-
-        <section id="ingresar">
-
-            <form action="" id="formularioInicio">
-                <h5>Inicio de sesión</h5>
-                <label for="emailInicio">Ingrese su correo electrónico:</label>
-                <input id="emailInicio" type="email" required> 
-                <br>
-                <label for="passwordInicio">Ingrese su contraseña:</label>
-                <input id="passwordInicio" type="text" required>
-                <br>
-                <input type="submit" name="" id="">
-            </form>
-        
-            <p id="mensajeInicioSesion"></p>
-
-        </section>
-
-    </main>
-
-    <footer class="footer__index">
-
-    </footer>
+            <div class="nav__index">
     
-    <!-- <h4>Elija la ciudad donde quiere reservar el alojamiento:</h4>
-    <select name="" id="ciudadElegida">
-        <option value="Buenos Aires">Buenos Aires</option>
-        <option value="Córdoba">Córdoba</option>
-        <option value="Bariloche">Bariloche</option>
-        <option value="Mendoza">Mendoza</option>
-        <option value="Salta">Salta</option>
-        <option value="Ushuaia">Ushuaia</option>
-    </select> -->
- 
+                <div class="header__logo">
+                    <h3><a href="./index.html" class="header__logo-a">Hadrianus.com</a></h3>
+                </div>
+    
+                <div class="header__usuario">
+                    <ul class="header__menu" id="headerIndex__menu">
+                        <li id="botonRegistro"><button class="boton-menu boton-usuario">Registro</button></li>
+                        <li id="botonIngresar"><button class="boton-menu boton-usuario">Ingresar</button></li>
+                    </ul>
+                </div>
+    
+            </div>
+            
+            <div>
+                <h1 class="header__h1">Hadrianus</h1>
+    
+                <h2 class="header__h2">¡Bienvenido a Hadrianus! ¡El sistema más completo de reservas de hoteles en Argentina!</h2>
+            </div>
+    
+        </header>
+    
+        <main>
+    
+            <section id="index">
+    
+                <h2 class="titulo-main">Encuentra tu próxima estancia</h2>
+                
+                <div class="formularioFiltro">
+                    <form action="" id="formularioFiltro">
+                        <select class="formulario-item" id="ciudad" name="ciudad" required>
+                            <option value="" hidden>¿Adónde vas?</option>
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Bariloche">Bariloche</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Salta">Salta</option>
+                            <option value="Ushuaia">Ushuaia</option>
+                        </select>
+                        <input class="formulario-item" type="number" id="cantidadNoches" placeholder="Cantidad de noches" required>
+                        <input class="formulario-item" type="number" id="cantidadHuespedes" placeholder="Cantidad de huéspedes" required>
+                        <input class="formulario-item" type="number" id="cantidadHabitaciones" placeholder="Cantidad de habitaciones" required>
+                        <input class="formulario-item" type="number" id="presupuesto" placeholder="Presupuesto por noche" required>
+                        <input class="formulario-item boton-submit" type="submit" value="Buscar">
+                    </form>
+                </div>
+    
+                <div class="contenedor-hoteles">
+                    <div class="hotel">
+                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
+                        <div class="hotel-detalles">
+                            <h3 class="hotel-titulo">Hotel 01</h3>
+                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
+                            <button class="hotel-reservar">Reservar</button>
+                        </div>
+                    </div>
+                    <div class="hotel">
+                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
+                        <div class="hotel-detalles">
+                            <h3 class="hotel-titulo">Hotel 01</h3>
+                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
+                            <button class="hotel-reservar">Reservar</button>
+                        </div>
+                    </div>
+                    <div class="hotel">
+                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
+                        <div class="hotel-detalles">
+                            <h3 class="hotel-titulo">Hotel 01</h3>
+                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
+                            <button class="hotel-reservar">Reservar</button>
+                        </div>
+                    </div>
+                    <div class="hotel">
+                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
+                        <div class="hotel-detalles">
+                            <h3 class="hotel-titulo">Hotel 01</h3>
+                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
+                            <button class="hotel-reservar">Reservar</button>
+                        </div>
+                    </div>
+                </div>
+    
+            </section>
+    
+            <section>
+                <ul id="hotelesDisponibles"></ul>
+            </section>
+    
+            <section class="registro" id="registro">
+                
+                <div class="forumlarioRegistro-box">
+                    <form action="" class="formularioRegistro" id="formularioRegistro">
+                        <h5 class="formularioRegistro-item">Registrarse</h5>
+                        <label for="emailRegistro">Ingrese su correo electrónico:</label>
+                        <input class="formularioRegistro-item" id="emailRegistro" type="email" required> 
+                        <br>
+                        <label for="passwordRegistro">Ingrese su contraseña:</label>
+                        <input class="formularioRegistro-item" id="passwordRegistro" type="text" required>
+                        <br>
+                        <input class="formularioRegistro-item boton-submit-registro" type="submit" name="" id="">
+                        <p class="formularioRegistro-item" id="mensajeRegistro"></p>
+                    </form>
+                </div>
+                
+                
+                
+            </section>
+    
+            <section class="ingresar" id="ingresar">
+                
+                <div class="forumlarioInicio-box">
+                    <form action="" class="formularioInicio" id="formularioInicio">
+                        <h5 class="formularioInicio-item">Inicio de sesión</h5>
+                        <label for="emailInicio">Ingrese su correo electrónico:</label>
+                        <input class="formularioInicio-item" id="emailInicio" type="email" required> 
+                        <br>
+                        <label for="passwordInicio">Ingrese su contraseña:</label>
+                        <input class="formularioInicio-item" id="passwordInicio" type="text" required>
+                        <br>
+                        <input class="formularioInicio-item boton-submit-inicio" type="submit" name="" id="" value="Iniciar sesión">
+                        <p class="formularioInicio-item" id="mensajeInicioSesion"></p>
+                    </form>
+                </div>
+                
+            </section>
+    
+        </main>
+    
+        <footer class="footer__index">
+            <p class="texto-footer">© 2023 Adriano Francioni</p>
+        </footer>
+
+    </div>
+
     <script defer src="./script.js"></script>
 </body>
 </html>
