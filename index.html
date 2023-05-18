@@ -43,8 +43,8 @@
     
                 <h2 class="titulo-main">Encuentra tu próxima estancia</h2>
                 
-                <div class="formularioFiltro">
-                    <form action="" id="formularioFiltro">
+                <div >
+                    <form class="formularioFiltro" action="" id="formularioFiltro">
                         <select class="formulario-item" id="ciudad" name="ciudad" required>
                             <option value="" hidden>¿Adónde vas?</option>
                             <option value="Buenos Aires">Buenos Aires</option>
@@ -62,45 +62,10 @@
                     </form>
                 </div>
     
-                <div class="contenedor-hoteles">
-                    <div class="hotel">
-                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
-                        <div class="hotel-detalles">
-                            <h3 class="hotel-titulo">Hotel 01</h3>
-                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
-                            <button class="hotel-reservar">Reservar</button>
-                        </div>
-                    </div>
-                    <div class="hotel">
-                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
-                        <div class="hotel-detalles">
-                            <h3 class="hotel-titulo">Hotel 01</h3>
-                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
-                            <button class="hotel-reservar">Reservar</button>
-                        </div>
-                    </div>
-                    <div class="hotel">
-                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
-                        <div class="hotel-detalles">
-                            <h3 class="hotel-titulo">Hotel 01</h3>
-                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
-                            <button class="hotel-reservar">Reservar</button>
-                        </div>
-                    </div>
-                    <div class="hotel">
-                        <img class="hotel-imagen" src="./img/faena.jpeg" alt="">
-                        <div class="hotel-detalles">
-                            <h3 class="hotel-titulo">Hotel 01</h3>
-                            <p class="hotel-tarifa">Tarifa por noche: $1000</p>
-                            <button class="hotel-reservar">Reservar</button>
-                        </div>
-                    </div>
+                <div class="contenedor-hoteles" id="contenedor-hoteles">
+                    <!-- Acá van a aparecer las cards de los hoteles filtrados con JS -->
                 </div>
     
-            </section>
-    
-            <section>
-                <ul id="hotelesDisponibles"></ul>
             </section>
     
             <section class="registro" id="registro">
@@ -113,13 +78,11 @@
                         <br>
                         <label for="passwordRegistro">Ingrese su contraseña:</label>
                         <input class="formularioRegistro-item" id="passwordRegistro" type="text" required>
+                        <p class="mensajeError" id="mensajeRegistro"></p>
                         <br>
                         <input class="formularioRegistro-item boton-submit-registro" type="submit" name="" id="">
-                        <p class="formularioRegistro-item" id="mensajeRegistro"></p>
                     </form>
                 </div>
-                
-                
                 
             </section>
     
@@ -133,9 +96,9 @@
                         <br>
                         <label for="passwordInicio">Ingrese su contraseña:</label>
                         <input class="formularioInicio-item" id="passwordInicio" type="text" required>
+                        <p class="mensajeError" id="mensajeInicioSesion"></p>
                         <br>
                         <input class="formularioInicio-item boton-submit-inicio" type="submit" name="" id="" value="Iniciar sesión">
-                        <p class="formularioInicio-item" id="mensajeInicioSesion"></p>
                     </form>
                 </div>
                 
@@ -149,6 +112,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="./script.js"></script>
 </body>
 </html>

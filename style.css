@@ -97,18 +97,24 @@ main {
     color: #1a1a1a;
 }
 
+#index {
+    height: 36rem;
+}
+
 .titulo-main {
     margin-bottom: 2rem;
     font-size: 2rem;
 }
 
 .formularioFiltro {
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
     padding: .25rem;
     margin-bottom: 2rem;
     background-color: #ffb700;
     height: 4rem;
     border-radius: .60rem;
+    gap: 0.3rem;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -121,27 +127,35 @@ input[type=number] { -moz-appearance:textfield; }
 
 .formulario-item {
     padding: 1rem;
-    width: 17.5%;
+    width: 20%;
     height: 3.5rem;
     border: 0;
     border-radius: .50rem;
 }
 
 .boton-submit {
-    width: 10.7%;
+    width: 13%;
     background-color: #006ce4;
     color: white;
+    transition: all 0.15s ease-out;
+}
+
+.boton-submit:hover {
+    background-color: #003b95;
+    transition: all 0.15s ease-out;
 }
 
 .contenedor-hoteles {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
 }
 
 .hotel-imagen {
-    max-width: 100%;
+    width: 100%;
     border-radius: .60rem;
+    height: 13rem;
+    object-fit: cover;
 }
 
 .hotel-detalles {
@@ -213,7 +227,6 @@ input[type=number] { -moz-appearance:textfield; }
     justify-content: space-between;
     align-items: center;
     width: 75%;
-    
 }
 
 .formularioRegistro h5, .formularioInicio h5{ 
@@ -230,16 +243,13 @@ input[type=number] { -moz-appearance:textfield; }
     border-radius: .50rem;
 }
 
+.mensajeError {
+    color: #d4111e;
+}
+
 .boton-submit-registro, .boton-submit-inicio {
     width: 30%;
     background-color: #006ce4;
     color: white;
     border: 0;
-}
-
-
-/*  */
-
-.disabled {
-    display: none;
 }
