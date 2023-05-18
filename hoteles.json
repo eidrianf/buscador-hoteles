@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "imagen": "./img/01.jpg",
+        "nombre": "Melia",
+        "ciudad": "Buenos Aires",
+        "tarifaNoche": 15000
+    },
+    {
+        "id": 2,
+        "imagen": "./img/02.jpeg",
+        "nombre": "NH Florida",
+        "ciudad": "Buenos Aires",
+        "tarifaNoche": 23000
+    },
+    {
+        "id": 3,
+        "imagen": "./img/03.jpeg",
+        "nombre": "Faena Buenos Aires",
+        "ciudad": "Buenos Aires",
+        "tarifaNoche": 38000
+    },
+    {
+        "id": 4,
+        "imagen": "./img/04.jpeg",
+        "nombre": "531 Hostel",
+        "ciudad": "Córdoba",
+        "tarifaNoche": 8000
+    },
+    {
+        "id": 5,
+        "imagen": "./img/05.jpeg",
+        "nombre": "Amerian Executive Córdoba",
+        "ciudad": "Córdoba",
+        "tarifaNoche": 18000
+    },
+    {
+        "id": 6,
+        "imagen": "./img/06.jpeg",
+        "nombre": "Azur Real Hotel Boutique",
+        "ciudad": "Córdoba",
+        "tarifaNoche": 27000
+    },
+    {
+        "id": 7,
+        "imagen": "./img/07.jpeg",
+        "nombre": "Hotel Tres Reyes",
+        "ciudad": "Bariloche",
+        "tarifaNoche": 12000
+    },
+    {
+        "id": 8,
+        "imagen": "./img/08.jpeg",
+        "nombre": "Península Petit Hotel",
+        "ciudad": "Bariloche",
+        "tarifaNoche": 24000
+    },
+    {
+        "id": 9,
+        "imagen": "./img/09.jpeg",
+        "nombre": "Llao LLao Hotel Resort",
+        "ciudad": "Bariloche",
+        "tarifaNoche": 44000
+    },
+    {
+        "id": 10,
+        "imagen": "./img/10.jpeg",
+        "nombre": "Luján de Cuyo B&B",
+        "ciudad": "Mendoza",
+        "tarifaNoche": 10000
+    },
+    {
+        "id": 11,
+        "imagen": "./img/11.jpeg",
+        "nombre": "Posada El Encuentro",
+        "ciudad": "Mendoza",
+        "tarifaNoche": 20000
+    },
+    {
+        "id": 12,
+        "imagen": "./img/12.jpeg",
+        "nombre": "Park Hyatt Mendoza",
+        "ciudad": "Mendoza",
+        "tarifaNoche": 26000
+    },
+    {
+        "id": 13,
+        "imagen": "./img/13.jpeg",
+        "nombre": "Hotel Posada del Sol",
+        "ciudad": "Salta",
+        "tarifaNoche": 14000
+    },
+    {
+        "id": 14,
+        "imagen": "./img/14.jpeg",
+        "nombre": "Sheraton Salta Hotel",
+        "ciudad": "Salta",
+        "tarifaNoche": 22000
+    },
+    {
+        "id": 15,
+        "imagen": "./img/15.jpeg",
+        "nombre": "Hotel Solar de la Plaza",
+        "ciudad": "Salta",
+        "tarifaNoche": 28000
+    },
+    {
+        "id": 16,
+        "imagen": "./img/16.jpeg",
+        "nombre": "Hostería Valle Frío",
+        "ciudad": "Ushuaia",
+        "tarifaNoche": 16000
+    },
+    {
+        "id": 17,
+        "imagen": "./img/17.jpeg",
+        "nombre": "Hotel Los Nires",
+        "ciudad": "Ushuaia",
+        "tarifaNoche": 25000
+    },
+    {
+        "id": 18,
+        "imagen": "./img/18.jpeg",
+        "nombre": "Los Cauquenes Resort & Spa",
+        "ciudad": "Ushuaia",
+        "tarifaNoche": 40000
+    }
+]

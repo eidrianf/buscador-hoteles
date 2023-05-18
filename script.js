@@ -141,6 +141,7 @@ inicioSesion.addEventListener('submit', inicioSesionUsuario);
 
 // FILTRO HOTELES
 
+/*
 class Hotel {
     constructor(id, imagen, nombre, ciudad, tarifaNoche){
         this.id = id;
@@ -176,7 +177,16 @@ hoteles.push(new Hotel(15, "./img/15.jpeg", "Hotel Solar de la Plaza", "Salta", 
 hoteles.push(new Hotel(16, "./img/16.jpeg", "Hostería Valle Frío", "Ushuaia", 16000));
 hoteles.push(new Hotel(17, "./img/17.jpeg", "Hotel Los Nires", "Ushuaia", 25000));
 hoteles.push(new Hotel(18, "./img/18.jpeg", "Los Cauquenes Resort & Spa", "Ushuaia", 40000));
+*/
 
+let hoteles = [];
+
+fetch("./hoteles.json")
+    .then(response => response.json())
+    .then(data => {
+        hoteles = data;
+        console.log(data)
+    })
 
 let formularioFiltro = document.getElementById("formularioFiltro");
 let contenedorHoteles = document.getElementById("contenedor-hoteles");
